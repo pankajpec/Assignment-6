@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+class Search {
+private:
+    std::vector<int> data;
+
+public:
+    void Insert_data(std::vector<int> values) {
+        data.insert(data.end(), values.begin(), values.end());
+    }
+
+    void display() {
+        std::cout << "Data: ";
+        for (int i = 0; i < data.size(); ++i) {
+            std::cout << data[i] << " ";
+        }
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    Search search_instance;
+    std::vector<int> values = {2, 5, 7, 7, 8, 10, 18, 28, 31, 57, 81};
+    search_instance.Insert_data(values);
+    search_instance.display();
+    return 0;
+}
